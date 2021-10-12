@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #main-banner{
+            width: 1920px;
+            margin: 0 auto;
+        }
+
+        .slider{
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .sliders {
+            width: 800%;
+            display: flex;
+            margin-left: -0%;
+            transition-duration: 1s;
+        }
+        .sliders img{
+            width: 12.5%;
+        
+        }
+        .indicator{
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            bottom: 15px;
+        }
+        
+        .indicator a{
+            display: inline-block;
+            background: #999;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        .indicator a.active{
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <section id="main-banner">
+      <div class="slider">  
+        <div class="sliders">
+            <img src="./images/bg01.jpg"  alt="이미지 1">
+            <img src="./images/bg02.jpg"  alt="이미지 2">
+            <img src="./images/bg03.jpg"  alt="이미지 3">
+            <img src="./images/bg04.jpg"  alt="이미지 4">
+            <img src="./images/bg05.jpg"  alt="이미지 5">
+            <img src="./images/bg06.jpg"  alt="이미지 6">
+            <img src="./images/bg07.jpg"  alt="이미지 7">
+            <img src="./images/bg08.jpeg" alt="이미지 8">
+        </div>
+        <div class="indicator">
+            <a class="active" href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+        $(function(){
+                var imgNum = 0;
+                setInterval(function(){
+                imgNum++
+                if(imgNum > 7) imgNum = 0;
+                var x = -(imgNum * 100) + '%';
+                $('.sliders')
+                .css('margin-left', x);
+
+                $('.slider .indicator a')
+                .removeClass('active');
+                $('.slider .indicator a')
+                .eq(imgNum)
+                .addClass('active');
+            }, 3000)
+        })
+
+        //인디케이터 
+
+    </script>
+</body>
+</html>

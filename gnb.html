@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css.css">
+    <title>2단계 메뉴, gnb</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+    <div class="header-top">
+        <div class ="first-ul-box">
+        <ul class="first-ul">
+            <li><a href="#">공식온라인몰</a></li>
+            <li><a href="#">기업고객 웹수발주</a></li>
+        </ul>
+        </div>
+        <h1><a href="#"><img src="./images/logo.png" alt="로고"></a></h1>
+        <div class ="second-ul-box">
+            <ul class="second-ul">
+                <li><a href="#">인스타</a></li>
+                <li><a href="#">유튜브</a></li>
+                <li><a href="#">KR</a></li>
+                <li><a href="#">EN</a></li>
+                <li><a href="#">돋보기</a></li>
+            </ul>
+         </div>
+    </div>
+    <nav id="gnb">
+        <ul class="depth1">
+            <li><a href="#">회사소개</a>
+                <ul class="depth2">
+                    <li><a href="#">비전과 미션</a></li>
+                    <li><a href="#">C I 소개</a></li>
+                    <li><a href="#">연혁</a></li>
+                    <li><a href="#">CEO 인사말</a></li>
+                    <li><a href="#">찾아오시는길</a></li>
+                </ul>
+            </li>
+            <li><a href="#">브랜드안내</a>
+                <ul class="depth2">
+                    <li><a href="#">SASE</a></li>
+                    <li><a href="#">혼술메이트</a></li>
+                    <li><a href="#">CHIC'S</a></li>
+                </ul>
+            </li>
+            <li><a href="#">제품안내</a>
+                <ul class="depth2">
+                    <li><a href="#">치킨가공품</a></li>
+                    <li><a href="#">새우가공품</a></li>
+                    <li><a href="#">오리가공품</a></li>
+                    <li><a href="#">치킨원료육</a></li>
+                    <li><a href="#">새우원료</a></li>
+                    <li><a href="#">염지육</a></li>
+                </ul>
+            </li>
+            <li><a href="#">홍보센터</a>
+                <ul class="depth2">
+                    <li><a href="#">SNS</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">보도자료</a></li>
+                    <li><a href="#">카타로그</a></li>
+                </ul>
+            </li>
+            <li><a href="#">고객센터</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+
+
+<script>
+    $(function(){
+        $('#gnb .depth1').hover(
+            //mouseover
+            function(){
+                $('#gnb .depth1 li').hover(function(){
+                    $(this)
+                    .find('.depth2')
+                    .stop()
+                    .slideDown(500);
+             },
+            //mouseout
+                    function(){
+                        $(this)
+                        .find('.depth2')
+                        .stop()
+                        .slideUp(500);
+            })
+        })
+    })
+</script>
+</body>
+</html>
